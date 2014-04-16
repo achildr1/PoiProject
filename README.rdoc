@@ -27,4 +27,4 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
-<img src="https://www.codeship.io/projects/8c00ce40-a7ed-0131-fbc3-2ab503b3d64e/status">
+https://www.codeship.io/projects/8c00ce40-a7ed-0131-fbc3-2ab503b3d64e/status
