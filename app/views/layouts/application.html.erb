@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title><%= content_for?(:title) ? yield(:title) : "Group D Project1" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Group D Project1" %>">
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    
-    <%= csrf_meta_tags %>
-  </head>
-  <body>  	
-	    <header><%= render 'layouts/navigation' %></header>
-	    <main role="main">
-	    	<br />
-		    <div class="container" style="width: 98%;">
-		        <%= render 'layouts/messages' %>
-		        <% if current_user %>
-  		        <% if can? :admin_dashboard, [InterestPoint, Image] %>
-  		        		<div class="row"><%= render 'admin/dashboard' %></div>
-      		        <% elsif can? :contributor_dashboard, [InterestPoint, Image] %><div class="row"><%= render 'contributor/dashboard' %></div>
-                  <% end %><div class="row"><%= yield %></div>
-		          <% else %>
-		        	   <div class="row"><%= yield %></div>
-		        <% end %>
-			<%= render "shared/test_footer" %>
-		    </div>
-	    </main>	    
-  </body>
+<head>
+  <title>Poiproject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
 </html>
